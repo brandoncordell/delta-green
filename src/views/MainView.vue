@@ -1,37 +1,38 @@
 <template>
-  <div class="about">
-    <div class="fa-4x">
-      <div class="fa-layers fa-fw">
-        <i class="fa-duotone fa-user-secret" />
-        <i
-          class="fa-solid fa-circle"
-          style="color: white"
-          data-fa-transform="shrink-8 down-4 right-5"
-        />
-        <i class="fa-solid fa-plus" style="" data-fa-transform="shrink-10 down-4 right-5"></i>
+  <page-wrapper>
+    <div class="flex flex-col gap-y-4">
+      <div>
+        <base-button size="xs">Base XS</base-button>
+        <base-button size="sm">Base SM</base-button>
+        <base-button>Base</base-button>
+        <base-button size="lg">Base LG</base-button>
+        <base-button size="xl">Base XL</base-button>
+      </div>
+
+      <div>
+        <div class="flex gap-x-5">
+          <base-button type="primary" size="xs">Primary XS</base-button>
+          <base-button type="primary" size="sm">Primary SM</base-button>
+          <base-button type="primary">Primary</base-button>
+          <base-button type="primary" size="lg">Primary LG</base-button>
+          <base-button type="primary" size="xl">Primary XL</base-button>
+        </div>
+      </div>
+
+      <div>
+        <div class="flex gap-x-5">
+          <base-button type="secondary" size="xs">Secondary XS</base-button>
+          <base-button type="secondary" size="sm">Secondary SM</base-button>
+          <base-button type="secondary">Secondary</base-button>
+          <base-button type="secondary" size="lg">Secondary LG</base-button>
+          <base-button type="secondary" size="xl">Secondary XL</base-button>
+        </div>
       </div>
     </div>
-
-    <div class="fa-4x">
-      <div class="fa-layers fa-fw">
-        <i
-          class="fa-duotone fa-user-secret"
-          data-fa-transform="shrink-6 up-4 left-5"
-          style="opacity: 0.5"
-        />
-        <i
-          class="fa-duotone fa-user-secret"
-          data-fa-transform="shrink-6 up-4 right-5"
-          style="opacity: 0.5"
-        />
-        <i class="fa-solid fa-circle" style="color: white" data-fa-transform="shrink-6 up-2" />
-        <!-- <i class="fa-duotone fa-user-secret" data-fa-transform="shrink-4" style="color: white" /> -->
-        <i class="fa-duotone fa-user-secret" data-fa-transform="shrink-4" />
-      </div>
-    </div>
-
-    <div class="fa-4x">
-      <i class="fa-duotone fa-users"></i>
-    </div>
-  </div>
+  </page-wrapper>
 </template>
+
+<script setup type="ts">
+import PageWrapper from '@components/Page/PageWrapper.vue'
+import BaseButton from '@components/Buttons/BaseButton.vue'
+</script>

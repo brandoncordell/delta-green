@@ -3,7 +3,7 @@
   <div class="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
     <!-- Sidebar component, swap this element with another sidebar if you like -->
     <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-zinc-900 px-6">
-      <div class="flex h-16 pt-6 shrink-0 items-center gap-x-5">
+      <div class="flex h-16 pt-6 shrink-0 items-center gap-x-3">
         <img
           class="h-8 w-auto"
           src="@assets/images/delta-green-triangle-logomark.png"
@@ -38,15 +38,32 @@
           </li>
         </ul>
       </nav>
+
+      <div v-if="isAuthenticated" class="flex items-center justify-center gap-x-3 pb-6">
+        <logout-button />
+      </div>
+
+      <div v-else class="grid items-center justify-center gap-x-3 pb-6">
+        <login-button />
+        <sign-up-button />
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import SidebarIcon from '@components/Sidebar/SidebarIcon.vue'
+import { useAuth0 } from '@auth0/auth0-vue'
+
 import type { Link } from '@/src/types'
+
+import LoginButton from '@components/Authentication/LoginButton.vue'
+import LogoutButton from '@components/Authentication/LogoutButton.vue'
+import SidebarIcon from '@components/Sidebar/SidebarIcon.vue'
+import SignUpButton from '@components/Authentication/SignUpButton.vue'
 
 defineProps({
   links: Array<Link>
 })
+
+const { isAuthenticated } = useAuth0()
 </script>

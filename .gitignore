@@ -28,3 +28,9 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+
+# Production environment variables use Netlify
+.env
+
+# Local Netlify folder
+.netlify

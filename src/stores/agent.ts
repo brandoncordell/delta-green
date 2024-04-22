@@ -1,12 +1,9 @@
 import { reactive } from 'vue'
 import { defineStore } from 'pinia'
 
-interface Stat {
-  score?: number
-  distinguishing_feature?: string
-}
+import type { Stat } from '@/src/types'
 
-export const useCharacterStore = defineStore('character', () => {
+export const useAgentStore = defineStore('agent', () => {
   const details = reactive({
     personalData: {
       name: 'Bob the Builder',

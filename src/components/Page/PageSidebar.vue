@@ -7,7 +7,7 @@
   >
     <button type="button" class="-m-2.5 p-2.5 text-gray-400 lg:hidden" @click="sidebarOpen = true">
       <span class="sr-only">Open sidebar</span>
-      <hamburger-icon />
+      open
     </button>
 
     <div class="flex-1 text-sm font-semibold leading-6 text-white">Dashboard</div>
@@ -29,7 +29,6 @@ import { ref } from 'vue'
 
 import SidebarDesktop from '@components/Page/PageSidebarDesktop.vue'
 import SidebarMobile from '@components/Page/PageSidebarMobile.vue'
-import HamburgerIcon from '@components/Page/PageHamburgerIcon.vue'
 
 const sidebarOpen = ref(false)
 

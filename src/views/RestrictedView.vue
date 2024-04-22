@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center justify-center h-full bg-zinc-900">
+  <div class="absolute inset-0 flex flex-col items-center justify-center h-full bg-zinc-900">
     <main class="flex items-center justify-center size-full mb-12">
       <img
         src="@assets/images/restricted.png"

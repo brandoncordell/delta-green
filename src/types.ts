@@ -4,3 +4,8 @@ export interface Link {
   icon?: string
   current: boolean
 }
+
+export interface Stat {
+  score?: number
+  distinguishing_feature?: string
+}
