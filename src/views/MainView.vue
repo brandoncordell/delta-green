@@ -10,7 +10,7 @@
       </div>
 
       <div>
-        <div class="flex gap-x-5">
+        <div>
           <base-button type="primary" size="xs">Primary XS</base-button>
           <base-button type="primary" size="sm">Primary SM</base-button>
           <base-button type="primary">Primary</base-button>
@@ -20,8 +20,31 @@
       </div>
 
       <div>
-        <div class="flex gap-x-5">
+        <div>
           <base-button type="secondary" size="xs">Secondary XS</base-button>
+          <base-button type="secondary" size="sm">Secondary SM</base-button>
+          <base-button type="secondary">Secondary</base-button>
+          <base-button type="secondary" size="lg">Secondary LG</base-button>
+          <base-button type="secondary" size="xl">Secondary XL</base-button>
+        </div>
+      </div>
+
+      <div>
+        <div>
+          <base-button
+            type="secondary"
+            size="xs"
+            :icon="{ name: 'fa-user-secret', alignment: 'leading' }"
+          >
+            Secondary XS
+          </base-button>
+          <base-button
+            type="secondary"
+            size="sm"
+            :icon="{ name: 'fa-user-secret', alignment: 'trailing' }"
+          >
+            Secondary XS
+          </base-button>
           <base-button type="secondary" size="sm">Secondary SM</base-button>
           <base-button type="secondary">Secondary</base-button>
           <base-button type="secondary" size="lg">Secondary LG</base-button>

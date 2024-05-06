@@ -1,17 +1,32 @@
 <template>
-  <component :is="tag" :class="buttonClasses">
-    <slot />
+  <component :is="tag" class="button" :class="buttonClasses">
+    <fa-icon v-if="icon" :icon="icon.name" class="button__icon" />
+
+    <span>
+      <slot />
+    </span>
   </component>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
 
+// this would normally be imported from a types.ts file
+interface Icon {
+  name?: string
+  style?: 'duotone' | 'solid' | 'regular' | 'light' | 'brands'
+}
+
+interface ButtonIcon extends Icon {
+  alignment?: 'leading' | 'trailing'
+}
+
 interface Props {
   tag?: string
   size?: 'xs' | 'sm' | 'base' | 'lg' | 'xl'
   type?: 'primary' | 'secondary' | 'light'
   dark?: boolean
+  icon?: ButtonIcon
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -22,13 +37,13 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const buttonClasses = computed(() => {
-  const classes = [`-${props.size}`, `-${props.type}`]
-
-  if (props.dark) {
-    classes.push('-dark')
-  }
-
-  return classes
+  return [
+    `button--${props.type}`,
+    `button--${props.size}`,
+    { 'button--dark': props.dark },
+    { 'button--icon': props.icon },
+    { '-icon-trailing': props.icon?.alignment === 'trailing' }
+  ]
 })
 </script>
 
@@ -38,42 +53,51 @@ button {
 }
 
 /* sizes */
-.-xs {
+.button--xs {
   @apply rounded px-2 py-1 text-xs;
 }
 
-.-sm {
+.button--sm {
   @apply rounded px-2 py-1 text-sm;
 }
 
-.-lg {
+.button--lg {
   @apply px-3 py-2 text-sm;
 }
 
-.-xl {
+.button--xl {
   @apply px-3.5 py-2.5 text-sm;
 }
 
 /* types */
-.-primary {
+.button--primary {
   @apply bg-dg-green text-white hover:bg-dg-green-500 focus-visible:outline-dg-green;
 
-  &.-dark {
+  &.button--dark {
     @apply bg-dg-green-500 hover:bg-dg-green-400 focus-visible:outline-dg-green-500;
 
     text-shadow: 0 0 2px #045034;
   }
 }
 
-.-secondary {
+.button--secondary {
   @apply rounded-md bg-white text-gray-900 hover:bg-gray-50;
 
-  &:not(.-dark) {
+  &:not(.button--dark) {
     @apply ring-1 ring-inset ring-gray-300;
   }
 
-  &.-dark {
+  &.button--dark {
     @apply bg-white/10 text-white hover:bg-white/20;
   }
+}
+
+/* icon buttons */
+.button--icon {
+  @apply inline-flex items-center gap-x-1.5;
+}
+
+.-icon-trailing {
+  @apply flex-row-reverse;
 }
 </style>

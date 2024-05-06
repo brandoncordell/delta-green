@@ -43,7 +43,7 @@
         <logout-button />
       </div>
 
-      <div v-else class="grid items-center justify-center gap-x-3 pb-6">
+      <div v-else class="grid grid-cols-2 items-center justify-center gap-x-3 pb-6">
         <login-button />
         <sign-up-button />
       </div>

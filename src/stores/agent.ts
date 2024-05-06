@@ -6,7 +6,7 @@ import type { Stat } from '@/src/types'
 export const useAgentStore = defineStore('agent', () => {
   const details = reactive({
     personalData: {
-      name: 'Bob the Builder',
+      name: null,
       profession: null,
       employer: null,
       nationality: null,

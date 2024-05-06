@@ -17,6 +17,8 @@
   },
   "dependencies": {
     "@auth0/auth0-vue": "^2.3.3",
+    "@awesome.me/kit-a0908caae4": "^1.0.10",
+    "@fortawesome/vue-fontawesome": "^3.0.6",
     "@headlessui/vue": "^1.7.20",
     "mongodb": "^6.5.0",
     "pinia": "^2.1.7",

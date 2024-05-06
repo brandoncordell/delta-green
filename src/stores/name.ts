@@ -15,7 +15,7 @@ interface Surname {
 
 interface Name {
   given_names: GivenName[]
-  surnames: []
+  surnames: Surname[]
 }
 
 export const useNameStore = defineStore('name', () => {
